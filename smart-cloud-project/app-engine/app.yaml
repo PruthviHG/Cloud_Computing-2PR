@@ -1,0 +1,10 @@
+runtime: python311
+
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  BUCKET_NAME: my-project-bucket   # ⚠️ CHANGE THIS
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2
